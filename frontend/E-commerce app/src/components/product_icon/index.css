@@ -101,3 +101,19 @@
   color: #0f172a;
   line-height: 1;
 }
+
+.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn{
+  border-radius: 3px;
+  background-color: orange;
+  color: white;
+  height: 25px;
+  width: 100px;
+  border: 2px;
+  cursor: pointer;
+}

@@ -19,19 +19,20 @@ const App = () => {
       <Route
         path="/products"
         element={
-        
+          
             <Products/>
           
         }
       />
-      {/* <Route
+       {/* <Route
         path="/"
         element={
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
+          
+            <LoginForm />
+          
         }
-      />
+      /> */}
+      {/*
       
       <Route
         path="/products/:id"
@@ -41,6 +42,8 @@ const App = () => {
           </ProtectedRoute>
         }
       />
+      
+      <Route path="*" element={<NotFound />} /> */}
       <Route
         path="/cart"
         element={
@@ -49,7 +52,6 @@ const App = () => {
           </ProtectedRoute>
         }
       />
-      <Route path="*" element={<NotFound />} /> */}
     </Routes>
   </BrowserRouter>
   </div>

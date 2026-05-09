@@ -1,10 +1,12 @@
 import {Link} from 'react-router'
 import Cookies from 'js-cookie'
 import {useNavigate} from 'react-router'
+import {useCart} from '../../context/CartContext'
 
 import './index.css'
 
 const Header = () => {
+  const {cartItems}=useCart()
   const navigate = useNavigate()
   const onClickLogout = () => {
     Cookies.remove('jwt_token')
@@ -50,7 +52,7 @@ const Header = () => {
 
             <li className="nav-menu-item">
               <Link to="/cart" className="nav-link">
-                Cart
+                Cart <span className='number'>{cartItems.length}</span>
               </Link>
             </li>
           </ul>

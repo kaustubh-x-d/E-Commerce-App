@@ -1,9 +1,18 @@
 import {Link} from 'react-router-dom'
+import {useCart} from '../../context/CartContext'
 import './index.css'
 
 const ProductCard = props => {
   const {productData} = props
   const {title, brand, imageUrl, rating, price, id} = productData
+  const {addToCart} = useCart()
+
+  const onClickAddToCart = event => {
+    event.preventDefault()
+    event.stopPropagation()
+    console.log('Add to Cart clicked', productData)
+    addToCart(productData)
+  }
 
   return (
     <li className="product-item">
@@ -16,6 +25,7 @@ const ProductCard = props => {
           <h1 className="title" title={title}>
             {title}
           </h1>
+
           <p className="brand">by {brand}</p>
 
           <div className="product-details">
@@ -32,6 +42,10 @@ const ProductCard = props => {
           </div>
         </div>
       </Link>
+
+      <button type="button" className="btn" onClick={onClickAddToCart}>
+        Add to Cart
+      </button>
     </li>
   )
 }

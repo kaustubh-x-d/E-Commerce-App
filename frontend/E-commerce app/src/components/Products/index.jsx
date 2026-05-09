@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import ProductCard from '../product_icon'
 import './index.css'
 import Header from  "../header"
+import {useCart} from '../../context/CartContext.jsx'
+
 
 const sortOptions = [
   {id: 'PRICE_HIGH', label: 'Price: High to Low'},
@@ -31,6 +33,10 @@ const Products = () => {
   const [activeRatingId, setActiveRatingId] = useState('')
   const [searchInput, setSearchInput] = useState('')
   const [loading, setLoading] = useState(false)
+
+  
+  const {addToCart} = useCart()
+  
 
   useEffect(() => {
     const fetchProducts = async () => {
