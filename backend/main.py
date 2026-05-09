@@ -84,7 +84,7 @@ def admin_route():
 products = [
     {
         "id": 1,
-        "name": "Wireless Headphones",
+        "title": "Wireless Headphones",
         "brand": "SoundMax",
         "price": 2499,
         "image_url": "https://images.unsplash.com/photo-1518441312910-7f3f6af4f5f8?auto=format&fit=crop&w=800&q=80",
@@ -95,7 +95,7 @@ products = [
     },
     {
         "id": 2,
-        "name": "Smart Watch",
+        "title": "Smart Watch",
         "brand": "TechLoop",
         "price": 3999,
         "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
@@ -106,7 +106,7 @@ products = [
     },
     {
         "id": 3,
-        "name": "Running Shoes",
+        "title": "Running Shoes",
         "brand": "RunPro",
         "price": 2999,
         "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
@@ -117,7 +117,7 @@ products = [
     },
     {
         "id": 4,
-        "name": "Backpack",
+        "title": "Backpack",
         "brand": "UrbanPack",
         "price": 1499,
         "image_url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
@@ -128,7 +128,7 @@ products = [
     },
     {
         "id": 5,
-        "name": "Bluetooth Speaker",
+        "title": "Bluetooth Speaker",
         "brand": "BeatBox",
         "price": 1799,
         "image_url": "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=800&q=80",
@@ -139,7 +139,7 @@ products = [
     },
     {
         "id": 6,
-        "name": "T-Shirt",
+        "title": "T-Shirt",
         "brand": "CottonCloud",
         "price": 799,
         "image_url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",

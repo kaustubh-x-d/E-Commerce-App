@@ -33,11 +33,7 @@ const Header = () => {
 
         <div className="nav-bar-large-container">
           <Link to="/">
-            <img
-              className="website-logo"
-              src="https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/loading-data/niat_react_js/niat_coding_questions/nxt-trendz-logo.png"
-              alt="website logo"
-            />
+            <h1 className='heading'>AMAFLIPZON</h1>
           </Link>
           <ul className="nav-menu">
             <li className="nav-menu-item">

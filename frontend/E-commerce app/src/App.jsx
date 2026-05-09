@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import LoginForm from './components/login'
-import Home from './components/home'
+// import Home from './components/home'
 import Products from './components/Products'
 // import Cart from './components/Cart'
 // import ProtectedRoute from './components/ProtectedRoute'
@@ -12,9 +12,18 @@ import './App.css'
 
 const App = () => {
   return(
+    <div>
   <BrowserRouter>
     <Routes>
       <Route path="/login" element={<LoginForm />} />
+      <Route
+        path="/products"
+        element={
+        
+            <Products/>
+          
+        }
+      />
       {/* <Route
         path="/"
         element={
@@ -23,14 +32,7 @@ const App = () => {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/products"
-        element={
-          <ProtectedRoute>
-            <Products />
-          </ProtectedRoute>
-        }
-      />
+      
       <Route
         path="/products/:id"
         element={
@@ -50,6 +52,7 @@ const App = () => {
       <Route path="*" element={<NotFound />} /> */}
     </Routes>
   </BrowserRouter>
+  </div>
   )
 }
 export default App
