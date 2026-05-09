@@ -1,12 +1,12 @@
-import {BrowserRouter, Route, Routes} from 'react-router'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
-import LoginForm from './components/LoginForm'
-import Home from './components/Home'
-import Products from './components/Products'
-import Cart from './components/Cart'
-import ProtectedRoute from './components/ProtectedRoute'
-import ProductItemDetails from './components/ProductItemDetails'
-import NotFound from './components/NotFound'
+import LoginForm from './components/login'
+// import Home from './components/Home'
+// import Products from './components/Products'
+// import Cart from './components/Cart'
+// import ProtectedRoute from './components/ProtectedRoute'
+// import ProductItemDetails from './components/ProductItemDetails'
+// import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -14,7 +14,7 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/login" element={<LoginForm />} />
-      <Route
+      {/* <Route
         path="/"
         element={
           <ProtectedRoute>
@@ -46,9 +46,10 @@ const App = () => (
           </ProtectedRoute>
         }
       />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} /> */}
     </Routes>
   </BrowserRouter>
+  
 )
 
 export default App
