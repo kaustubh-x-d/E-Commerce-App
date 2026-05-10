@@ -1,17 +1,16 @@
 import {useState} from 'react'
-
 import {useNavigate, Navigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
-import './index.css'    
-const LoginForm =()=>{
-    const [username, setUsername]=useState('');
-    const [password, setPassword]=useState('');
-    const [showSubmitError,setshowSubmitError]=useState(false);
-    const [errorMsg,seterrorMsg]=useState('')
-    const navigate = useNavigate()
+import './index.css'
 
-    
+const LoginForm = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [showSubmitError, setShowSubmitError] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
+  const navigate = useNavigate()
+  
   const onChangeUsername = event => {
     setUsername(event.target.value)
   }
@@ -20,99 +19,101 @@ const LoginForm =()=>{
     setPassword(event.target.value)
   }
 
-    const renderPasswordField = () => (
-    <>
-      <label className="input-label" htmlFor="password">
-        PASSWORD
-      </label>
-      <input
-        type="password"
-        id="password"
-        className="password-input-field"
-        value={password}
-        onChange={onChangePassword}
-        placeholder="Password"
-      />
-    </>
-  )
+  const showErrormsg = error => {
+    setShowSubmitError(true)
+    setErrorMsg(error)
+  }
 
-  const renderUsernameField = () => (
-    <>
-      <label className="input-label" htmlFor="username">
-        USERNAME
-      </label>
-      <input
-        type="text"
-        id="username"
-        className="username-input-field"
-        value={username}
-        onChange={onChangeUsername}
-        placeholder="Username"
-      />
-    </>
-  )
+  const submitForm = async event => {
+    event.preventDefault()
 
-
-    const submitForm = async event =>{
-        event.preventDefault()
-        const Userdetails={username,password}
-        const url="http://127.0.0.1:5000/login"
-        const options ={
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Userdetails),
-        }
-        const response=await fetch(url,options)
-        const data= await response.json()
-        if (response.ok){
-            Cookies.set('jwt_token', data.jwt_token, {expires: 30})
-            navigate('/', {replace: true})
-        }
-        else{
-            showErrormsg(data.message)
-        }
-
+    const userDetails = {username, password}
+    const url = 'http://127.0.0.1:5000/login'
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userDetails),
     }
 
-    const showErrormsg = error => {
-        setshowSubmitError(true)
-        seterrorMsg(error)
-}
-    const jwtToken = Cookies.get('jwt_token')
-    if (jwtToken !== undefined) {
-        return <Navigate to="/" />
-    }
+    try {
+      const response = await fetch(url, options)
+      const data = await response.json()
 
-    return (
-         <div className="login-form-container">
-            <img
-                src="https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/loading-data/niat_react_js/niat_coding_questions/nxt-trendz-logo.png"
-                className="login-website-logo-mobile-img"
-                alt="website logo"
-            />
-            <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
-                className="login-img"
-                alt="website login"
-            />
-            <form className="form-container" onSubmit={submitForm}>
-                <img
-                src="https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/loading-data/niat_react_js/niat_coding_questions/nxt-trendz-logo.png"
-                className="login-website-logo-desktop-img"
-                alt="website logo"
-                />
-                <div className="input-container">{renderUsernameField()}</div>
-                <div className="input-container">{renderPasswordField()}</div>
-                <button type="submit" className="login-button">
-                Login
-                </button>
-                {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-            </form>
-            </div>
-    )
+      if (response.ok) {
+        Cookies.set('jwt_token', data.jwt_token, {expires: 30})
+        navigate('/', {replace: true})
+      } else {
+        showErrormsg(data.message)
+      }
+    } catch (error) {
+      showErrormsg('Network error. Please try again.')
+    }
+  }
+
+  const jwtToken = Cookies.get('jwt_token')
+  if (jwtToken !== undefined) {
+    return <Navigate to="/" replace />
+  }
+
+  return (
+    <div className="login-form-container">
+      <img
+        src="https://i.postimg.cc/nrH9PN32/Chat-GPT-Image-May-10-2026-02-33-55-PM.png"
+        className="login-website-logo-mobile-img"
+        alt="website logo"
+      />
+
+      <img
+        src="https://i.postimg.cc/nrH9PN32/Chat-GPT-Image-May-10-2026-02-33-55-PM.png"
+        className="login-img"
+        alt="website login"
+      />
+
+      <form className="form-container" onSubmit={submitForm}>
+        <img
+          src="https://i.postimg.cc/brX3SYNf/Chat-GPT-Image-May-10-2026-02-29-38-PM.png"
+          className="login-website-logo-desktop-img"
+          alt="website logo"
+        />
+
+        <div className="input-container">
+          <label className="input-label" htmlFor="username">
+            USERNAME
+          </label>
+          <input
+            type="text"
+            id="username"
+            className="username-input-field"
+            value={username}
+            onChange={onChangeUsername}
+            placeholder="Username"
+          />
+        </div>
+
+        <div className="input-container">
+          <label className="input-label" htmlFor="password">
+            PASSWORD
+          </label>
+          <input
+            type="password"
+            id="password"
+            className="password-input-field"
+            value={password}
+            onChange={onChangePassword}
+            placeholder="Password"
+          />
+        </div>
+
+        <button type="submit" className="login-button">
+          Login
+        </button>
+
+        {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+      </form>
+    </div>
+  )
 }
 
 export default LoginForm
-

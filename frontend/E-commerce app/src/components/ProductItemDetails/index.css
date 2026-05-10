@@ -1,0 +1,140 @@
+.product-details-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.product-details-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.product-details-image-wrap {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.product-image {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.product-details-content {
+  display: grid;
+  gap: 14px;
+  padding: 6px 0;
+}
+
+.product-details-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.product-details-meta {
+  display: grid;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.product-details-meta p {
+  margin: 0;
+  color: #334155;
+  font-size: 0.98rem;
+}
+
+.product-details-meta strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.product-description {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.product-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.status-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 20px;
+  color: #64748b;
+  font-size: 1rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+@media (max-width: 768px) {
+  .product-details-page {
+    padding: 20px;
+  }
+
+  .product-details-container {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 20px;
+    border-radius: 20px;
+  }
+
+  .product-details-title {
+    font-size: 1.6rem;
+  }
+
+  .product-details-image-wrap {
+    padding: 14px;
+  }
+}
+
+.btn{
+  border-radius: 3px;
+  background-color: orange;
+  color: white;
+  height: 25px;
+  width: 100px;
+  border: 2px;
+  cursor: pointer;
+}

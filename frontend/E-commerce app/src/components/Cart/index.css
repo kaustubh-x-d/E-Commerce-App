@@ -54,7 +54,8 @@
 }
 
 .cart-item-info {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   gap: 6px;
 }
 
@@ -178,3 +179,11 @@
     width: 100%;
   }
 }
+
+.img{
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  margin-right: 7px;
+}
+

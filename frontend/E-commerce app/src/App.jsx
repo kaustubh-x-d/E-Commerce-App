@@ -5,7 +5,7 @@ import Home from './components/Home'
 import Products from './components/Products'
 import Cart from './components/Cart'
 import ProtectedRoute from './components/ProtectedRoute'
-// import ProductItemDetails from './components/ProductItemDetails'
+import ProductItemDetails from './components/ProductItemDetails'
 // import NotFound from './components/NotFound'
 
 import './App.css'
@@ -31,17 +31,9 @@ const App = () => {
         <Home/>
         </ProtectedRoute>}
       />
+    
+      <Route path="/products/:id" element={<ProtectedRoute><ProductItemDetails/> </ProtectedRoute>} />
       {/*
-      
-      <Route
-        path="/products/:id"
-        element={
-          <ProtectedRoute>
-            <ProductItemDetails />
-          </ProtectedRoute>
-        }
-      />
-      
       <Route path="*" element={<NotFound />} /> */}
       <Route
         path="/cart"
