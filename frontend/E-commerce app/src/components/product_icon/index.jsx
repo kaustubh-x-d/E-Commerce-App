@@ -33,7 +33,7 @@ const ProductCard = props => {
 
             <div className="rating-container" aria-label={`Rating ${rating}`}>
               <img
-                src="https://assets.ccbp.in/frontend/react-js/star-img.png"
+                src="https://cdn-icons-png.flaticon.com/512/541/541415.png"
                 alt="star"
                 className="star"
               />
